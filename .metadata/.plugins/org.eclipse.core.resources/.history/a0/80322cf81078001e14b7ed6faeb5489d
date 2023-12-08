@@ -1,0 +1,41 @@
+package com.Arrays;
+
+public class MultiDimensionalArrayExample {
+	
+	public static void main(String[] args) {
+			//Multi Dimensional array 
+		//Syntax: datatype arrayname[][]=new datatype[][];
+		
+		String array1[][]=new String[2][2];
+		array1[0][0]="Manual Testing";
+		array1[0][1]="Venkat Sir";
+		array1[1][0]="Selenium";
+		array1[1][1]="Srini";
+		
+		/*
+		System.out.println(array1[0][0]);
+		System.out.println(array1[0][1]);
+		System.out.println(array1[1][0]);
+		System.out.println(array1[1][1]);
+		*/
+		
+		for(int rowIndex=0;rowIndex<=1;rowIndex++)
+		{
+			for(int rowofcellIndex=0; rowofcellIndex<=1; rowofcellIndex++)
+			{
+				System.out.println(array1[rowIndex][rowofcellIndex]);
+			}
+		}
+		System.out.println("************************************");
+		
+		for(int rowIndex=0;rowIndex<array1.length;rowIndex++)
+		{
+			for(int rowofcellIndex=0;rowofcellIndex<array1.length;rowofcellIndex++)
+			{
+				System.out.print(array1[rowIndex][rowofcellIndex]););
+			}
+		}
+		
+		}		
+	}
+

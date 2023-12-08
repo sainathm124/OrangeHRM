@@ -1,0 +1,9 @@
+<Suite name="OrangeHRMApplication">
+	<Test name="LoginTest">
+		<classes>
+			<class name="OrangeHRMApplicationTestCases.LoginTest">
+			</class>
+		</classes>
+			</Test>
+	
+</Suite>

@@ -1,0 +1,33 @@
+package com.OHRM;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+import com.Utility.Log;
+
+public class BaseTest {
+	String ApplcaitionURLAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+	public static ChromeDriver driver;
+	
+	@AfterTest
+	public void Setup() 
+	{
+	System.setProperty("webdriver.chrome.driver","./DriverFiles/chromedriver.exe");
+	driver=new ChromeDriver();
+	Log.info("Browser Opened Successfully");
+	driver.get(ApplcaitionURLAddress);
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.manage().window().maximize();
+	Log.info("Navigated Appliation Successfully");	
+	driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+	
+	}
+	@AfterTest
+	public void teardown() 
+	{
+	driver.quit();
+	Log.info("Application CLosed Successfully");
+	}
+}

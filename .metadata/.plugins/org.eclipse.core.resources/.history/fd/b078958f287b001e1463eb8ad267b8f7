@@ -1,0 +1,69 @@
+package com.LinksTesting;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+public class TSRTC_HomePage_LinksCount {
+
+		public static void main(String[] args) {
+			
+			WebDriver driver;
+			String applicationUrlAddress="https://www.tsrtconline.in/oprs-web/";
+			
+			//Automating the WebDriver
+			System.setProperty("webdriver.chrome.driver","./browserDriverFiles/chromedriver.exe");
+			driver=new ChromeDriver();
+			//System.setProperty("webdriver.edge.driver", "./browserDriverFIles/msedgedriver.exe");
+			//driver=new EdgeDriver();
+			
+			//Navigating to the Url Address given by CLient
+			driver.get(applicationUrlAddress);
+			
+//<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>
+			
+			// locator of WebDriver - linkText / partialLinkText
+			// selector should be the text of the link - Enquiry
+			
+			//By enquiryProperty=By.linkText("Enquiry");
+			/*
+			WebElement enquiry=driver.findElement(enquiryProperty);
+			enquiry.click();
+			
+
+			To find the Number of links on the Current WebPage
+<a class="selectedtabcopy" href="/oprs-web/guest/home.do?h=1" target="_top" title="Home">Home</a>
+<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>
+<a class="tabcopy" href="/oprs-web/guest/ticket/cancel.do" target="_top" title="Cancel Tickets">Cancel Tickets</a>
+<a class="tabcopy" href="/oprs-web/services/cancel.do" target="_top" title="Cancelled Services">Cancelled Services</a>		
+When ever we work on a group of similar type of elements - look for a common property existing in the Elements properties
+The common propery we found in the above group is anchor tag (a)		*/
+			By linkscommonProperty=By.tagName("a");	
+			//TSRTC_HomePageLinks is an array List 
+			//List<Object> arrayList1=new ArrayList<>();
+			List<WebElement>Tsrtc_HomePageLinks=driver.findElements(linkscommonProperty);
+			int Tsrtc_HomePageLinksCount=Tsrtc_HomePageLinks.size();
+			
+			System.out.println("Home Page Links COunt is : "+Tsrtc_HomePageLinksCount);
+			
+			/*String Tsrtc_HomePageLinksCountName0=Tsrtc_HomePageLinks.get(0).getText();
+			System.out.println(Tsrtc_HomePageLinksCountName0);
+		
+			String Tsrtc_HomePageLinksCountName1=Tsrtc_HomePageLinks.get(1).getText();
+			System.out.println(Tsrtc_HomePageLinksCountName1);*/
+			
+			for(int index=0; index<Tsrtc_HomePageLinks.size();index++)
+			{
+				// going to an array in which all the Links are identified and Saved - to every index
+				//and getting the Text of that link Name  
+				String Tsrtc_HomePageLinksCountName=Tsrtc_HomePageLinks.get(index).getText();
+				System.out.println(index+ "-"+Tsrtc_HomePageLinksCountName );
+			}
+			
+		
+		
+		}
+}

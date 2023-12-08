@@ -1,0 +1,17 @@
+package com.OHRM;
+
+
+import org.testng.annotations.Test;
+import com.BaseTest.BaseTest_WebPage;
+
+public class Testng_OHRM extends BaseTest_WebPage{
+	
+	@Test
+	public void LoginpageValidation() 
+	{
+	 String loginpagetitle="LOGIN Panel";
+	 //validating loginpage
+	 driver.gettext();
+	 
+	}
+}

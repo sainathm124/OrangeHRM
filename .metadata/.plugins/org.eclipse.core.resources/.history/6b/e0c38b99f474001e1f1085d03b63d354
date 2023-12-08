@@ -1,0 +1,21 @@
+package com.Arrays;
+
+public class SingleDimensionalArrayExample {
+
+	public static void main(String[] args) {
+		
+		//Single Dimentional Array
+		//datatype arrayName[]=new datatype[size];
+		 int array1[]=new int[3];
+		 
+		 array1[0]=10;
+		 array1[1]=20;
+		 array1[2]=30; 
+		 
+		 System.out.println(array1[0]);
+		 System.out.println(array1[1]);
+
+		
+		
+	}
+}

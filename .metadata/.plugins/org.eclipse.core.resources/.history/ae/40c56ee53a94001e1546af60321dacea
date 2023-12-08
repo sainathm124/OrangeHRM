@@ -1,0 +1,15 @@
+package com.BaseTest;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BaseTest {
+	ChromeDriver driver;
+	public void Setup() 
+	{
+	System.setProperty("Webdriver.chrome.driver","./DriverFiles/chromedriver.exe");
+	driver=new ChromeDriver();
+	driver.manage().timeouts(
+	
+	}
+	
+}

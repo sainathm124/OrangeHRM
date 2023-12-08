@@ -1,0 +1,12 @@
+package com.Arrays;
+
+public class SingleDimensionalArrayExample {
+
+	public static void main(String[] args) {
+		
+		//Single Dimentional Array
+		//datatype arrayName[]=new datatyoe[size];
+		int array1[]=new int[3];
+		
+	}
+}

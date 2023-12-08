@@ -1,0 +1,12 @@
+package com.Arrays;
+
+public class ObjectArrayExample {
+
+	public static void main(String[] args) {
+	//syntax for Object Array
+	//Multidimenctional array is capable of storing different datatype values
+	//Object arrayName[][]=new object[size][size]
+
+	}
+
+}

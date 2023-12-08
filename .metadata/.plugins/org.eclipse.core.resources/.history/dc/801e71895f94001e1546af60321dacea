@@ -1,0 +1,24 @@
+package com.OrangeHRMApplicationWebPages;
+import org.testng.annotations.Test;
+
+import com.BaseTest.BaseTest;
+import com.Utility.Log;
+
+public class OrangeHRMLoginPage extends BaseTest{
+
+	@Test
+	public void ValidationOfLoginPage() 
+	{
+		String Expected_loginpagetitle="OrangeHRM";
+		String Actual_loginpagetitle=driver.getTitle();
+		
+		if(Actual_loginpagetitle.equals(Expected_loginpagetitle))
+		{
+			Log.info("Passed");
+		}
+		else
+		{
+		Log.info("Failed");	
+		}
+	}
+}

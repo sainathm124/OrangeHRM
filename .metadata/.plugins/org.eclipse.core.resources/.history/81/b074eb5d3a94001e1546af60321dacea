@@ -1,0 +1,11 @@
+package com.BaseTest;
+
+public class BaseTest {
+
+	public void Setup() 
+	{
+	System.setProperty("Webdriver.chrome.driver","./DriverFiles/chromedriver.exe");
+	
+	}
+	
+}

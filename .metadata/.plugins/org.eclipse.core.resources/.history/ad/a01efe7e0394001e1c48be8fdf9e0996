@@ -1,0 +1,13 @@
+package OrangeHRMApplication_TestNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Basetest {
+	
+	public void Setup() 
+	{
+		System.setProperty("Webdriver.chrome.driver", "./DriverFiles/chromedriver.exe");
+		Chromedriver driver=new ChromeDriver();
+	}
+}

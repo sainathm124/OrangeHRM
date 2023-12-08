@@ -1,0 +1,23 @@
+package com.Arrays;
+
+public class ObjectArrayExample {
+
+	public static void main(String[] args) {
+	//syntax for Object Array
+	//Multidimenctional array is capable of storing different datatype values
+	//Object arrayName[][]=new object[size][size]
+	
+		Object array1[]	=new Object[4];
+		array1[0]=10;
+		array1[1]="webDriver";
+		array1[2]='A';
+		array1[3]=10.12345;
+		
+		System.out.println(array1[0]);
+		System.out.println(array1[1]);
+		System.out.println(array1[2]);
+		System.out.println(array1[3]);
+		
+	}
+
+}

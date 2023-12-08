@@ -1,0 +1,15 @@
+package com.BasicJava;
+
+import org.openqa.selenium.WebDriver;
+
+public class Testing {
+	 
+		WebDriver driver;
+		String ApplicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		@Given("^User Should Chrome Browser in system$")
+		
+			System.setProperty("Webdriver.chrome.driver","./browserDriverFiles/chromedriver.exe");
+			driver=new ChromeDriver();
+			System.out.println(" ***** Successfully launched Chrome Browser ******* ");
+
+}

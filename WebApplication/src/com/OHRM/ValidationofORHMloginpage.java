@@ -1,0 +1,117 @@
+package com.OHRM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ValidationofORHMloginpage {
+
+	public static void main(String[] args) {
+
+	//Automating the chrome browser
+	ChromeDriver driver;
+	System.setProperty("webdriver.chrome.driver","./browserDriverFiles/chromedriver.exe");
+	driver=new ChromeDriver();
+	
+	//Link given by client "http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/dashboard"
+	//Navigating Google browser to above link
+	 String UrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/dashboard";
+	
+	 //Navigated to OHRM using Chrome with given Link
+	 driver.get(UrlAddress);
+	 
+	 //Validate OHRM Login Page
+	 String A_titleOfOHRM=driver.getTitle();
+	 System.out.println("The actual Title of OHRM Login Page is :"+A_titleOfOHRM);
+	
+	 //Expected Title should be OrangeHRM
+	 String E_titleOfOHRM="OrangeHRM";
+	 System.out.println("The Expected Title of OHRM login Page is : "+E_titleOfOHRM);
+	 
+	 //Validation of Actual Title of OHRM with Expected title of OHRM
+	 if(A_titleOfOHRM.equals(E_titleOfOHRM))
+	 {
+		 System.out.println("The Name of the OHRM is Matched : PASS");
+	 }
+	 else 
+	 {
+		 System.out.println("The Name of the OHRM is Not Matched : Fail");	 
+	 }
+	 
+	 //Validate Orange HRM application Login Page URL address
+	 
+	 String ExpectedURLAddress="OrangeHRM-4.2.0.1";
+	 System.out.println("The Expected URL address of OrangeHRM Login is : "+ExpectedURLAddress);
+	 
+	 //Actual URL Address of OrangeHRM Login Page
+	 String ActualUrlAddress=driver.getCurrentUrl();
+	 System.out.println("The Actual Url Address of OrangeHRM login page is : "+ActualUrlAddress);
+	 
+	 //Validating Expected URL should have 'OrangeHRM-4.2.0.1
+	 if(ActualUrlAddress.contains(ExpectedURLAddress))
+	 {
+	 System.out.println("The actual URL address Matched with Expected Url Address : PASS");
+	 }
+	 else
+	 {
+		 System.out.println("The actual URL address Not Matched with Expected Url Address : FAIL");
+	 }
+	 
+	 //Login orangeHRM Application using Valid Test Data
+	 //to find the element we need locators corresponding Selectors
+	 //1st web element is UserName
+	 //<input name="txtUsername" id="txtUsername" type="text">
+	 
+	 //Identyfy the webelement Property 
+	 By UserNameProperty=By.id("txtUsername");
+	 	
+	 //finding the webelement
+	 WebElement	UserName=driver.findElement(UserNameProperty);
+	 
+	 //Direct Menthod We cannot use
+	//driver.findElement(By.id("txtusername")).sendKeys("sainath");	 
+	 UserName.sendKeys("sainath");
+	 
+	 //Identyfy element of  Password Properties
+	 //<input name="txtPassword" id="txtPassword" autocomplete="off" type="password">
+	 By Passwordproperty=By.name("txtPassword");
+	 
+	 //fiding the webelement on current webpage
+	 WebElement Password=driver.findElement(Passwordproperty);
+	 
+	 //Sending valid Test date 
+	 Password.sendKeys("Sandyjones@2807");
+	 
+	 //identyfy the Login Button proprties
+	 //<input type="submit" name="Submit" class="button" id="btnLogin" value="LOGIN">
+	By LoginButtonProperty =By.className("button");
+	
+	//Find the Login Button in the webpage 
+	 WebElement Login=driver.findElement(LoginButtonProperty);
+	 
+	 //Performing the Operatin on Login Button 
+	 Login.click();
+	
+	 //Validate OrangeHRM application Home Page 
+	 String ExpectedHomePageTitle="OrangeHRM";
+	 System.out.println("Expected OHRM application Home Page title: "+ExpectedHomePageTitle);
+	
+	 //Actual Home Page Title
+	 String ActualHomePageTitle=driver.getTitle();
+	 System.out.println("Actual OHRM Application Home Page t0itle is :"+ActualHomePageTitle);
+	
+	 //Validating Actul Home page Title with Expected Hope Page title
+	 if(ActualHomePageTitle.equals(ExpectedHomePageTitle))
+	 {
+		 System.out.println("Actual and Expected Home Page title Matched: Pass");
+	 }
+	 else
+	 {
+		 System.out.println("Actual and Expected Home Page title Not Matched: Fail");
+	 }
+	
+	 driver.quit();
+	}
+	
+	
+}

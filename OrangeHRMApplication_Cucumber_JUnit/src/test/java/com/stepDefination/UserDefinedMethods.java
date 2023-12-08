@@ -1,0 +1,37 @@
+package com.stepDefination;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class UserDefinedMethods {
+	
+	WebDriver driver;
+	
+	@Given("Browser")
+	public void browser() {
+		
+		System.setProperty("webdriver.chrome.driver", "./driverFiles/chromedriver.exe");
+		driver = new ChromeDriver();
+		
+	   
+	}
+
+	@When("entered URL address")
+	public void entered_url_address() {
+		
+		driver.get("http://google.com");
+	   
+	}
+
+	@Then("HomePage")
+	public void home_page() {
+		
+		driver.quit();
+	    
+	}
+
+}

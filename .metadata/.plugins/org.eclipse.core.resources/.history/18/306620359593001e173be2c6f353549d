@@ -1,0 +1,9 @@
+package OrangeHRMApplication_TestNG;
+
+public class Basetest {
+	webdriver driver;
+	public void Setup() 
+	{
+		System.setProperty("Webdriver.chrome.driver", "./")
+	}
+}

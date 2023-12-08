@@ -1,0 +1,62 @@
+package com.Arrays;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListExample {
+
+	public static void main(String[] args) {
+		
+		// Syntax
+		// List<dataType>arrayListName = new ArrayList<>();
+
+		// ArrayList is a dynamic data structure - which is capable of saving and dataType
+		//   values if created it as of type Object - and there is not declaration of the
+//		    size -- as long as we assign a value into the arrayList an index is created
+//		    then and the value will be assigned into it
+
+		//   As long as the values are added into the arrayList - the size of the ArrayList
+//		    will be increased , if the values are removed from the arrayList automatically
+//		       the size of the arrayList will be decreased
+
+
+		List<Object>arrayList1 = new ArrayList<>();
+
+		//arrayList1[0]=10;
+		arrayList1.add("laddu");
+		arrayList1.add(10);
+		arrayList1.add("Selenium");
+		arrayList1.add('A');
+		arrayList1.add(10.1234);
+
+		/*
+		System.out.println(arrayList1);
+		System.out.println(arrayList1.get(0));
+		System.out.println(arrayList1.get(1));
+		System.out.println(arrayList1.get(2));
+		*/
+
+		for(int index=0;index<arrayList1.size();index++)
+		{
+		System.out.println(arrayList1.get(index));
+		}
+
+		System.out.println(" *************** For Each Loop *************");
+
+
+		for(Object arrayIndex:arrayList1)
+		{
+		System.out.println(arrayIndex);
+		}
+
+
+
+		
+
+		}
+}
+=================================================
+		
+	
+
+
